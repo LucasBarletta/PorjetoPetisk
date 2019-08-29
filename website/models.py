@@ -21,7 +21,7 @@ class Pessoa(models.Model):
     )
     email = models.CharField(
         max_length=255,
-        verbose_name='E-mail',
+        verbose_name='email',
         unique=True
     )
     str_cep = models.CharField(
@@ -34,7 +34,9 @@ class Pessoa(models.Model):
     )
     complemento = models.CharField(
         max_length=255,
-        verbose_name='Complemento'
+        verbose_name='Complemento',
+        null=True,
+        blank=True
     )
     genero = models.CharField(
         choices=GENEROS,
@@ -62,3 +64,52 @@ class Pessoa(models.Model):
     ativo = models.BooleanField(
         default=True
     )
+
+    def __str__(self):
+       return self.nome
+
+class Ong(models.Model):
+    responsavel = models.CharField(
+        max_length=50,
+        verbose_name='responsavel'
+    )
+    nome = models.CharField(
+        max_length=50,
+        verbose_name='nome'
+    )
+    horario_funcionamento = models.CharField(
+        verbose_name = 'horario_funcionamento'
+    )
+    endereco = models.CharField(
+        max_length=10,
+        verbose_name='endereco'
+    )
+    str_numero = models.CharField(
+        max_length=5,
+        verbose_name='Número Res.'
+    )
+    complemento = models.CharField(
+        max_length=255,
+        verbose_name='Complemento',
+        null=True,
+        blank=True
+    )
+    telefone = models.CharField(
+        null=True,
+        blank=True,
+        max_length=255,
+        verbose_name='Telefone'
+    ) 
+
+
+    obs = models.TextField()
+
+    criado_em = models.DateTimeField(
+        auto_now_add=True
+    )
+    ativo = models.BooleanField(
+        default=True
+    )
+
+    def __str__(self):
+       return self.nome
