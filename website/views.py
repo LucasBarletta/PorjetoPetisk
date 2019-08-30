@@ -2,6 +2,7 @@ from django.shortcuts import render
 from website.models import Pessoa
 from website.models import Ong
 
+
 # Create your views here.
 
 def index(request):
@@ -64,10 +65,11 @@ def ong(request):
     
     return render(request, 'ong.html')
 
-def ongs(request):
+def asongs(request):
     ongs = Ong.objects.filter(ativo=True).all()
     
-    contexto = {    
+    motivo = {    
         'ongs': ongs
     }
-    return render(request, 'asongs.html', contexto)
+    return render(request, 'asongs.html', motivo)
+

@@ -11,7 +11,7 @@
     
     <h2><strong>Cadastre sua ONG</strong></h2>
 
-    <form action="/ongs" method="post">
+    <form action="/ongs/" method="post">
         {% csrf_token %}
         <label for="nome">Nome:</label>
         <input type="text" name="nome" required>    
@@ -39,5 +39,7 @@
 
         <input type="submit" value="Cadastrar">     
     </form>
+
+    <a href="/asongs" target="_blank">ver ongs</a>
 
 {% endblock %}

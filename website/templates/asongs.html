@@ -5,7 +5,7 @@
 <h1>Lista de ongs cadastradas</h1>
 
 {% for ong in ongs %}
-    <p><strong>{{ong.nome}} {{ong.sobrenome}}</strong>--> {{ong.motivo}}</p>
+    <p><strong>{{ong.nome}} {{ong.responsavel}}</strong>--> {{ong.obs}}</p>
 {% endfor %}
 
 {% endblock %}

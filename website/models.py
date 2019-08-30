@@ -78,7 +78,9 @@ class Ong(models.Model):
         verbose_name='nome'
     )
     horario_funcionamento = models.CharField(
+        max_length=255,
         verbose_name = 'horario_funcionamento'
+        
     )
     endereco = models.CharField(
         max_length=10,
